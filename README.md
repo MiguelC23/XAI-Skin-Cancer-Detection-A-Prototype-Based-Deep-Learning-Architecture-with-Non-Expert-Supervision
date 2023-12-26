@@ -9,6 +9,8 @@ Universidade de Lisboa.
 In this GitHub repository, you can find the code used in the master's thesis project titled "Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision," 
 authored by Miguel Joaquim Nobre Correia and supervised by Prof. Carlos Jorge Andrade Mariz Santiago and Prof. Ana Catarina Fidalgo Barata.
 
+[See Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision](https://drive.google.com/file/d/1eKjxa3VhYLG_qV73ySK-5XtMqZHzTxLW/view?usp=sharing)
+
 The code in this repository is an adaptation of the code in the following repositories:
 
 |                                                    | Repository                                 | License                                                                                                         |
