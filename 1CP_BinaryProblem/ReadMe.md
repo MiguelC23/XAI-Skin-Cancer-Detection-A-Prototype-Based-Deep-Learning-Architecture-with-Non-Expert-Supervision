@@ -1,5 +1,5 @@
 # Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision
-# One-Class Prototypes: Simplified Binary Problem Explanation
+## One-Class Prototypes: Simplified Binary Problem Explanation
 
 Miguel Joaquim Nobre Correia. 
 Master's in Electrical and Computer Engineering. 
