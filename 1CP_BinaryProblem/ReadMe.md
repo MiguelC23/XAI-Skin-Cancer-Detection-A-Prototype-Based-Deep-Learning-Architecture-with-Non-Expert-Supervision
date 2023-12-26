@@ -1,10 +1,6 @@
 # Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision
 ## One-Class Prototypes: Simplified Binary Problem Explanation
 
-Miguel Joaquim Nobre Correia. 
-Master's in Electrical and Computer Engineering. 
-Instituto Superior Técnico, Lisboa, Portugal. Universidade de Lisboa.
-
 Code Regarding the models associated with the section "One-Class Prototypes: Simplified Binary Problem Explanation" of the Master's Thesis in Electrical and Computer Engineering titled "Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision," authored by Miguel Joaquim Nobre Correia conducted at the Instituto Superior Técnico, Lisbon, Portugal.
 
 This code was used to train and evaluate the models identified in the results using the following loss functions LP-1C, LP-1C-Masked, and LP-1C-Masked+LICD. In this type of models, the decision is made solely based on the prototypes of the malignant class, namely melanoma (MEL), with the prototypes of the benign class, namely nevus (NV), not used in the classification process. In other words, only the similarities with the melanoma prototypes are provided as input to the final fully connected layer of the model, the classifier.
