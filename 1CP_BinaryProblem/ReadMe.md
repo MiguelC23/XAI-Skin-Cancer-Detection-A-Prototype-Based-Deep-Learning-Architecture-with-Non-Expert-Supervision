@@ -9,6 +9,7 @@ This code was used to train and evaluate the models identified in the results us
 This code was designed solely for application to a binary classification problem of skin cancer lesions with two classes. It has been exclusively used to distinguish between melanoma and nevus (MEL vs NV), with MEL identified as class 0 and NV as class 1.
 
 ##1-How to train the model?
+
     To train the model, simply run the main.py file. It is not necessary to provide arguments in the code line, as the model settings are edited in the settings.py file. After that, just run main.py.
     Regarding the settings.py file, carefully examine the file as it is commented, explaining each of the parameters of the model settings. However, I would like to emphasize here that it is important to pay attention to the paths for the folders where the data is located.
 
