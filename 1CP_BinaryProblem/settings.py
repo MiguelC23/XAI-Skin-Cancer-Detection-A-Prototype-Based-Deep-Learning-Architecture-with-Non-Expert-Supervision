@@ -67,7 +67,7 @@ coefs = {
     }
 
 num_train_epochs = 21#21
-num_warm_epochs = 5#5 # warm epochs must be qual to train epochs during Debug
+num_warm_epochs = 5#5 
 push_start = 5#5
 push_epochs=[5,10,15,20]#5,10,15,20
 number_iterations=10
