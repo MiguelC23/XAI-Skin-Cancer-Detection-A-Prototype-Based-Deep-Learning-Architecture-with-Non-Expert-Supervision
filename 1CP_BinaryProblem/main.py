@@ -202,7 +202,6 @@ if __name__ == '__main__':
     "push_epochs":push_epochs,
     "diversity":diversity,
     "Number of Malignant Prototypes":number_of_malignant_prototype,
-    "deterministicFL":True,
     "PC":"Miguel",
     "number_iterations":number_iterations,
     "LP1C_MASKED":LP1C_MASKED,
