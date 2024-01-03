@@ -21,7 +21,7 @@ This code was designed solely for application to a binary classification problem
     train_mask_dir="..." # Path to binary masks of size 224x224x1, one for each training image, with the same name as the corresponding image. For example, the image ISIC_0000013.JPG has the mask ISIC_0000013.PNG. These masks identify pixels relevant from a medical perspective, i.e., within the skin lesion boundary (labeled 0) or outside the boundary (labeled 1), similar to skin lesion segmentation. 
     When EDEASD images are used in training (2nd option), each mask identifies pixels associated with 1 or more medical concepts by at least 1 doctor or by a minimum of 3 doctors (labeled 0), depending on the chosen user's level of stringency and pixels that are not associated with any concept are marked with 0. 0 always identifies what is relevant or important in the image and 1 what is not relevant or important.
 
-    test_mask_dir="..." # Masks for the validation set images. It is not mandatory but recommended to use when LP1C_MASKED=True.
+    test_mask_dir="..." # Masks for the validation set images. It is not mandatory but necessary to use when LP1C_MASKED=True.
 
     All folders indicated in these paths always contain two folders, one for the Melanoma class named MEL, and one for the Nevus class named NV. Whether it is a path for images or a path for masks.
 
