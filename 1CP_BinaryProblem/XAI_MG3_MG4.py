@@ -41,9 +41,9 @@ if __name__ == '__main__':
     model_name = os.path.basename(os.path.dirname(load_model_path))
 
     if(PH2==True):
-        testing_log_name = f"{model_name}_{filename}_PH2_XAI_EVALUATION.txt"
+        testing_log_name = f"{model_name}_{filename}_Random_heatmaps{RANDOM_HEAT_MAPS}_PH2_XAI_EVALUATION.txt"
     else:
-        testing_log_name = f"{model_name}_{filename}_Derm7pt_XAI_EVALUATION.txt"
+        testing_log_name = f"{model_name}_{filename}_Random_heatmaps{RANDOM_HEAT_MAPS}_Derm7pt_XAI_EVALUATION.txt"
 
     log, logclose = create_logger(log_filename=os.path.join(folder, testing_log_name))
     log("\t\t\tModel {}\n".format(testing_log_name))
