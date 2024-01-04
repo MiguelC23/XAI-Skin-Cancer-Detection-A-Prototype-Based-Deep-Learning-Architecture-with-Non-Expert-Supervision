@@ -40,7 +40,8 @@ After training, a folder named NC2 will be created in the directory where the co
 
 ## 3- How to test the model on the PH2 or Derm7pt test sets?
 Simply run the file TestPH2_or_Derm7pt.py, and there is no need to provide arguments in the code line; just edit the following lines.
-     path to the model you want to test
+    
+    path to the model you want to test &#8595;
      
     path_to_one_model=r"....pth"
     
