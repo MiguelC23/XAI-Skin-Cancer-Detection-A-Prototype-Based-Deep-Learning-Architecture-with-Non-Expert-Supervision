@@ -84,3 +84,27 @@ The prototypes present in these folders will be loaded by the code, and data wil
 After training, a folder named NC2(2 classes) or NC8(8 classes) will be created in the directory where the code is located. Within NC2 or NC8, you can find a folder named resnet18 (if that was the base CNN used). Inside the resnet18 folder, there is a folder with the name of the run. Within this folder, you can find the obtained prototypes and the checkpoints with the saved models, with a .pth extension.
 
 ## 3-How to obtain prototype examples for utilizing forgetting or remembering loss? Run the debug.py file.
+After training some models related to scenarios $L_{\text{P}}$ and $L_{\text{P}}+L_{\text{M}}$, and having executed the global_analysis_train_dataset.py file for these models, we will proceed to run the debug.py file. 
+To do so, there is no need to provide command line arguments; simply run the code after editing the following lines as necessary.
+
+    if __name__ == '__main__':
+    ...
+    
+    path_to_folder=r"C:\ACP_BM_Problem\NC2\resnet18\run1\20_1push0.8331_nearest_train" #Path to the folder created for the model after running the global_analysis_train_dataset.py file,
+    #wherein the debug.py will be executed on the model to obtain examples of prototypes to prohibit and prototypes to remember.
+    path_to_model_dir=r"C:\ACP_BM_Problem\NC2\resnet18\run1" path to the folder where is the model
+    
+    interactive= True #Put this True first, after run it again but with false
+    move=not interactive
+
+    num_classes=2 # Number total of classes, in our case 2 when MEL VS NEVUS or 8 when all classes from ISIC 2019
+    ...
+    #'-n-img', type=int, default=10, help='number of nearest patches to show for each prototype'
+    n_img=10
+
+On the first run, execute the file with `interactive=True` so that the user can inspect prototypes and designate each as prohibited by typing 'y' in the terminal, or as a reminder by typing 'r'. Subsequently, run the file again with `interactive=False` to relocate the prohibited prototypes and those to be remembered to the directories specified in settings.py:
+
+    forbidden_protos_directory = r"C:\ACP_BM_Problem\FP"
+    remembering_protos_directory = r"C:\ACP_BM_Problem\RP"
+
+
