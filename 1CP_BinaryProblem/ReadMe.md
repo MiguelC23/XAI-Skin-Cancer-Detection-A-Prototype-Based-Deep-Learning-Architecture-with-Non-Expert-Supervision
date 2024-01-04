@@ -12,24 +12,24 @@ This code was designed solely for application to a binary classification problem
 To train the model, simply run the main.py file. It is not necessary to provide arguments in the code line, as the model settings are edited in the settings.py file. After that, just run main.py.
 Regarding the settings.py file, carefully examine the file as it is commented, explaining each of the parameters of the model settings. However, I would like to emphasize here that it is important to pay attention to the paths for the folders where the data is located.
 
-Path to the training set; in our case, it refers to the training images from ISIC 2019. Another option is to also include the training images from SIC 2019 along with the images from the EDEASD dataset. In other words, the 1st option is Train ISIC 2019, and the 2nd option is Train ISIC 2019 + EDEASD. This second option was not applied in the referenced thesis, but rather in future work developed subsequently after the thesis was published.
+(train_dir)-Path to the training set; in our case, it refers to the training images from ISIC 2019. Another option is to also include the training images from SIC 2019 along with the images from the EDEASD dataset. In other words, the 1st option is Train ISIC 2019, and the 2nd option is Train ISIC 2019 + EDEASD. This second option was not applied in the referenced thesis, but rather in future work developed subsequently after the thesis was published.
 
     train_dir ="..." 
     
-Path to the validation set; in our case, it refers to the validation images from ISIC 2019.
+(test_dir)-Path to the validation set; in our case, it refers to the validation images from ISIC 2019.
 
     test_dir ="..." 
 
-In our case, it remains the same as train_dir when train_dir is Train ISIC 2019. However, when train_dir is Train ISIC 2019 + EDEASD, we can restrict it to only EDEASD. This is because EDEASD contains dermatological concept annotations, allowing us to determine the true concept represented by the prototype.
+(train_push_dir)-In our case, it remains the same as train_dir when train_dir is Train ISIC 2019. However, when train_dir is Train ISIC 2019 + EDEASD, we can restrict it to only EDEASD. This is because EDEASD contains dermatological concept annotations, allowing us to determine the true concept represented by the prototype.
 
     train_push_dir ="..." 
 
-Path to binary masks of size 224x224x1, one for each training image, with the same name as the corresponding image. For example, the image ISIC_0000013.JPG has the mask ISIC_0000013.PNG. These masks identify pixels relevant from a medical perspective, i.e., within the skin lesion boundary (labeled 0) or outside the boundary (labeled 1), similar to skin lesion segmentation. 
+(train_mask_dir)-Path to binary masks of size 224x224x1, one for each training image, with the same name as the corresponding image. For example, the image ISIC_0000013.JPG has the mask ISIC_0000013.PNG. These masks identify pixels relevant from a medical perspective, i.e., within the skin lesion boundary (labeled 0) or outside the boundary (labeled 1), similar to skin lesion segmentation. 
 When EDEASD images are used in training (2nd option), each mask identifies pixels associated with 1 or more medical concepts by at least 1 doctor or by a minimum of 3 doctors (labeled 0), depending on the chosen user's level of stringency and pixels that are not associated with any concept are marked with 0. 0 always identifies what is relevant or important in the image and 1 what is not relevant or important.
 
     train_mask_dir="..." 
     
-Masks for the validation set images. It is not mandatory but necessary to use when LP1C_MASKED=True.
+(test_mask_dir)-Masks for the validation set images. It is not mandatory but necessary to use when LP1C_MASKED=True.
 
     test_mask_dir="..."
 
@@ -41,34 +41,34 @@ After training, a folder named NC2 will be created in the directory where the co
 ## 3- How to test the model on the PH2 or Derm7pt test sets?
 Simply run the file TestPH2_or_Derm7pt.py, and there is no need to provide arguments in the code line; just edit the following lines.
     
-    path to the model you want to test &#8595;
+(path_to_one_model)-path to the model you want to test
      
     path_to_one_model=r"....pth"
     
-We recommend setting it to True if the model has been trained with LP1C_MASKED=True, meaning the model discards patches from images associated with areas marked as 1 by the masks, i.e., areas that are not directly important in the internal structure of the model during the forward process. Therefore, during testing or validation, masks for these images should also be provided to the model. In other words, the model makes decisions solely based on patches associated with relevant areas marked as 0 by the masks. If the model was trained with LP1C_MASKED=False, set this line to false as well.
+(MASKS_IN_TEST_SETS)-We recommend setting it to True if the model has been trained with LP1C_MASKED=True, meaning the model discards patches from images associated with areas marked as 1 by the masks, i.e., areas that are not directly important in the internal structure of the model during the forward process. Therefore, during testing or validation, masks for these images should also be provided to the model. In other words, the model makes decisions solely based on patches associated with relevant areas marked as 0 by the masks. If the model was trained with LP1C_MASKED=False, set this line to false as well.
 
     MASKS_IN_TEST_SETS=True 
     
-If true test in PH2 else test in Derm7pt
+(PH2)-If true test in PH2 else test in Derm7pt
 
     PH2=True
 
-if(PH2==True):
-    test_dir=r"..." #Path to the 224x224x3 images of the PH2 test set.
-    folder=r"...\1CP_BinaryProblem\PH2_Results" #Path to the folder where we will save a text file containing the results of testing the model on the PH2 test set.
-else:
-    test_dir=r"..." #Path to the 224x224x3 images of the Derm7pt test set.
-    folder=r"...\1CP_BinaryProblem\Derm7pt_Results" #Path to the folder where we will save a text file containing the results of testing the model on the Derm7pt test set.
-
-...
-...
-...
-
-
-if(PH2==True):
-    test_mask_dir=r"..." Path to PH2 masks. O marks relevant pixels and 1 what is not relevant. They are only used when MASKS_IN_TEST_SETS=True.
-elif(PH2==False):
-    test_mask_dir=r"..." Path to Derm7pt masks. O marks relevant pixels and 1 what is not relevant. They are only used when MASKS_IN_TEST_SETS=True.
+    if(PH2==True):
+        test_dir=r"..." #Path to the 224x224x3 images of the PH2 test set.
+        folder=r"...\1CP_BinaryProblem\PH2_Results" #Path to the folder where we will save a text file containing the results of testing the model on the PH2 test set.
+    else:
+        test_dir=r"..." #Path to the 224x224x3 images of the Derm7pt test set.
+        folder=r"...\1CP_BinaryProblem\Derm7pt_Results" #Path to the folder where we will save a text file containing the results of testing the model on the Derm7pt test set.
+    
+    ...
+    ...
+    ...
+    
+    
+    if(PH2==True):
+        test_mask_dir=r"..." Path to PH2 masks. O marks relevant pixels and 1 what is not relevant. They are only used when MASKS_IN_TEST_SETS=True.
+    elif(PH2==False):
+        test_mask_dir=r"..." Path to Derm7pt masks. O marks relevant pixels and 1 what is not relevant. They are only used when MASKS_IN_TEST_SETS=True.
 
 ## 4-See the importance of each prototype for the model.
 Simply run the file "Assessment_of_the_weight_of_each_prototype.py"; no need to provide arguments in the terminal command line. The weight of each prototype is determined by the difference in balanced accuracy on the ISIC 2019 validation set when each prototype is removed individually.
