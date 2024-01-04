@@ -20,6 +20,7 @@ The code in this repository is an adaptation of the code in the following reposi
 | Concept-level Debugging of Part-Prototype Networks | https://github.com/abonte/protopdebug      | [See License](https://github.com/abonte/protopdebug/blob/main/LICENSE)                                          |
 
 Used datasets [See sections 4.1, 4.2 and 5.3 of the thesis Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision](https://drive.google.com/file/d/1eKjxa3VhYLG_qV73ySK-5XtMqZHzTxLW/view?usp=sharing) 
+
 **[ISIC 2019](https://challenge.isic-archive.com/data/#2019)- Images for Training and Validation** 
 
   Tschandl P., Rosendahl C. & Kittler H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi.10.1038/sdata.2018.161 (2018)
