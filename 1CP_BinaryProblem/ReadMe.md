@@ -93,7 +93,9 @@ You don't need to provide arguments in the code line in the terminal. Instead, e
 
     most_activated_prototypes=... #chosse the same number as prototypes if you want.
 
-    Test_Dataset_variable=0 # Choose the Dataset from you 0 ISIC 2019; 1 PH2; 2 DERM7PT # Choose the dataset from which you want the image to be selected to visualize the model-generated explanation for classifying that image as either melanoma or nevus. Each dataset is associated with an integer number 0, 1, or 2.
+    Test_Dataset_variable=0 # Choose the Dataset from you 0 ISIC 2019; 1 PH2; 2 DERM7PT 
+    # Choose the dataset from which you want the image to be selected to visualize the model-generated explanation 
+    #for classifying that image as either melanoma or nevus. Each dataset is associated with an integer number 0, 1, or 2.
 
     MASKS_IN_TEST=... "Set this to true if the model was trained with LP1C_MASKED=True."
     ...
@@ -127,8 +129,9 @@ You don't need to provide arguments in the code line in the terminal. Instead, e
     load_model_name = r"...name of the model..."
 
 Edit the following lines of file local_analysis_vis.py as well:
-        source_dir = r"...Path to the folder created for the local analysis of an image after running local_analysis_skin.py..." 
-        number_prototypes_in_figure=... # Number indicating the number of prototypes appearing in the explanatory image; it can be the number of model prototypes.
+
+    source_dir = r"...Path to the folder created for the local analysis of an image after running local_analysis_skin.py..." 
+    number_prototypes_in_figure=... # Number indicating the number of prototypes appearing in the explanatory image; it can be the number of model prototypes.
 
 ## 6-View the k patches from the training set closest to each prototype. 
 Simply run the global_analysis_train_dataset.py file; there is no need to provide arguments in the terminal, just edit the following lines of code:
