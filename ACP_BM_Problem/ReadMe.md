@@ -244,7 +244,7 @@ Edit the following lines of file local_analysis_vis_8C.py as well:
     source_dir = r"...Path to the folder created for the local analysis of an image after running local_analysis_skin.py..." 
     number_prototypes_in_figure=... # Number indicating the number of prototypes appearing in the explanatory image; it can be the number of model prototypes.
 
-## 8-View the k patches from the training set closest to each prototype-->global_analysis_train_dataset.py
+## 8-View the k patches from the training set closest to each prototype--->global_analysis_train_dataset.py
 Simply run the global_analysis_train_dataset.py file; there is no need to provide arguments in the terminal, just edit the following lines of code:
 
     if __name__ == '__main__':
