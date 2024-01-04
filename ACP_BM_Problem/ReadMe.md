@@ -162,7 +162,7 @@ Change only the following lines of code according to what is necessary.
     MASKS_IN_TEST_SETS=True #We recommend setting it to True if the model has been trained with LP_MASKED=True, meaning the model discards patches 
     #from images associated with areas marked as 1 by the masks, i.e., areas that are not directly important in the internal structure of the model during the forward process. 
     #Therefore, during testing or validation, masks for these images should also be provided to the model. In other words, the model makes decisions solely based on patches
-    #associated with relevant areas marked as 0 by the masks. If the model was trained with LP1C_MASKED=False, set this line to false as well
+    #associated with relevant areas marked as 0 by the masks. If the model was trained with LP_MASKED=False, set this line to false as well
     if(MASKS_IN_TEST_SETS==True):
         test_mask_dir=r"..."#Path to the folder where the masks for the validation set are located. Only used when MASKS_IN_TEST_SETS=True.
     else:
