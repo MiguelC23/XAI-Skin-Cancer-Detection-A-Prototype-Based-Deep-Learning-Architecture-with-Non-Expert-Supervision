@@ -158,9 +158,10 @@ You don't need to provide arguments in the terminal command line; just edit the 
     if __name__ == '__main__':
         ...
         ...
-        train_push_dir = r"C:\Users\migue\OneDrive\Ambiente de Trabalho\archive_ISIC\masks_224_sum_all_concept_agree3\images_for_this_masks\MEL_NV"
-        load_model_path=r"C:\1CP_BinaryProblem\NC2\resnet18\run1\20_0push0.7869.pth"
-        size=...# Dimension of the maps that are the input of the prototype layer, i.e the output of convolution layers. Example [BATCH_SIZE,D,P,P]. So you should put size=(P,P). Only VGG16 has (14,14) the others is (7,7)
+        train_push_dir = r"..." #Folder with only the EDEASD images, inside this folder we have two subfolders, one for each class, MEL and NV.
+        load_model_path=r"....pth" #Path to the model you want to evaluate.
+        size=...# Dimension of the maps that are the input of the prototype layer, i.e the output of convolution layers.
+        #Example [BATCH_SIZE,D,P,P]. So you should put size=(P,P). Only VGG16 has (14,14) the others is (7,7)
 
     def concept_eval(model, dataloader, size=(7,7)):
         ...
