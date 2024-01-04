@@ -4,7 +4,7 @@ import os
 import torch.utils.data as data
     
 class NpyFolderLoss(data.Dataset):
-    """Dataset used for forgetting loss"""
+    """Dataset used for forgetting loss and remembering loss"""
 
     def __init__(self, loss_directory, device):
         self.loss_directory = loss_directory
@@ -75,7 +75,7 @@ def get_name_idx_patch(filename):
     return name, idx_patch
     
 class ImageFolderLoss(data.Dataset):
-    """Dataset used for forgetting loss"""
+    """Dataset used for forgetting loss and remembering loss"""
 
     def __init__(self, loss_directory, device):
         self.loss_directory = loss_directory
