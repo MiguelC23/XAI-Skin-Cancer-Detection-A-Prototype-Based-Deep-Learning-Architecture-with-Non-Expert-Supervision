@@ -49,7 +49,7 @@ When EDEASD images are used in training (BP Train ISIC 2019 + EDEASD), each mask
 
     test_mask_dir="..."
 
-(forbidden_protos_directory)- Folder containing prohibited prototypes, meaning models should not learn and consequently recall them. The information within this folder is only utilized in the following coefficients configuration, where 'LF' takes a nonzero value. This configuration corresponds to the $L_{\text{P}}+L_{\text{F}}$ where we use the forgeting loss that can be utilized
+(forbidden_protos_directory)- Folder containing prohibited prototypes, meaning models should not learn these prototypes and therefore "remember" them. The information within this folder is only utilized in the following coefficients configuration, where 'LF' takes a nonzero value. This configuration corresponds to the $L_{\text{P}}+L_{\text{F}}$ where we use the forgeting loss that can be utilized
 
     coefs = {
         'crs_ent': 1,
@@ -61,7 +61,7 @@ When EDEASD images are used in training (BP Train ISIC 2019 + EDEASD), each mask
         'LR': 0,
     };
         
-however, in the case of the referenced thesis, we focused solely on the scenario involving only remembering loss ($L_{\text{P}}+L_{\text{R}}$.
+however, in the case of the referenced thesis, we focused solely on the scenario involving only remembering loss ($L_{\text{P}}+L_{\text{R}}$). In this case, when the 'LR' coefficient takes a non-zero value, the information present in the 'remembering_protos_directory' is utilized. This directory corresponds to the path where we store the prototypes per class chosen by the user as examples that should be learned, or in other words, remembered by the model.
 
     coefs = {
         'crs_ent': 1,
