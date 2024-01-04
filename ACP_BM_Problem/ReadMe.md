@@ -107,4 +107,40 @@ On the first run, execute the file with `interactive=True` so that the user can 
     forbidden_protos_directory = r"C:\ACP_BM_Problem\FP"
     remembering_protos_directory = r"C:\ACP_BM_Problem\RP"
 
+## 4- How to test the model on the PH2 or Derm7pt test sets?
+Simply run the file TestPH2_or_Derm7pt.py, and there is no need to provide arguments in the code line; just edit the following lines.
+    
+    path_to_one_model=r"...pth" #path to the model you want to test
+    VALMASKS=True # Set this to true if you have masks for the validation set. 
+    MASKS_IN_TEST_SETS=True # Set this to true if you have masks for the validation set and if you trained the model with LP_MASKED=True.
+    # meaning the model discards patches from images associated with areas marked as 1 by the masks, i.e., areas that are not directly important in 
+    #the internal structure of the model during the forward process. Therefore, during testing or validation, masks for these images should also be provided to the model. 
+    #In other words, the model makes decisions solely based on patches associated with relevant areas marked as 0 by the masks. 
+    #If the model was trained with LP_MASKED=False, set this line to false as well.
 
+    PH2=True# If true test in PH2 else test in Derm7pt
+
+If PH2=True and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_DERM7PT=False and FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_PH2=True.
+
+If PH2=False and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_DERM7PT=True and FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_PH2=False.
+
+    #This flags are important to show only results relate to the classes present in the Dataset we are testing
+    #Because PH2 only has 2 classes and Derm7pt 6 classes
+    #But if we trained the model with 8 classes need to pay attention to this flags
+    FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_DERM7PT=False # Always false if the model has been trained on the binary problem.
+    FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_PH2=False #Always false if the model has been trained on the binary problem.
+
+    ...
+    VAL_dir=r"..." # Path to ISIC 2019 validation dataset
+    if(VALMASKS==True):
+        VAL_masks_path=r"..." # Path to ISIC 2019 validation masks dataset. O marks relevant pixels and 1 what is not relevant. They are only used when VALMASKS=True.
+    else:
+        VAL_masks_path=None
+    
+    ...
+    if(PH2==True):
+        test_dir=r"C:\Users\migue\OneDrive\Ambiente de Trabalho\PH2_DERM7PT\PH2_test"
+        folder=r"C:\ACP_BM_PROBLEM\PH2_Results"
+    else:
+        test_dir=r"C:\Users\migue\OneDrive\Ambiente de Trabalho\PH2_DERM7PT\derm7pt_like_ISIC2019\train_val_test_224"
+        folder=r"C:\ACP_BM_PROBLEM\Derm7pt_Results"
