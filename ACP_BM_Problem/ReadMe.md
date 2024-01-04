@@ -23,3 +23,43 @@ Squamous cell carcinoma (SCC)
 
 To train the model, simply run the main.py file. It is not necessary to provide arguments in the code line, as the model settings are edited in the settings.py file. After that, just run main.py.
 Regarding the settings.py file, carefully examine the file as it is commented, explaining each of the parameters of the model settings. However, I would like to emphasize here that it is important to pay attention to the paths for the folders where the data is located.
+
+Regarding the work carried out in the referenced thesis for training and validation, the images were sourced from the ISIC 2019 dataset. Whether it was the training or validation folders of the images or masks, they always contained the folders corresponding to the 8 classes AK, BCC, BKL, DF, MEL, NV, SCC, and VASC. Subsequently, depending on the user's choice in the settings.py file, with num_classes = 2 or num_classes = 8, the code will selectively retrieve only the folders for MEL and NV or all of them, respectively.
+
+Furthermore, although it was not utilized in the thesis under consideration but rather in subsequent work post-publication. There exists the possibility of addressing the MEL vs. NV binary classification problem using the same validation set, but during training, the images of Melanoma (MEL) and Nevus (NV) from the ISIC 2019 dataset can be combined with those from the EDEASD (EASY Dermoscopy Expert Agreement Study Dataset). Let's identify this scenario as BP Train ISIC 2019 + EDEASD, where BP stands for Binary Problem.
+
+(train_dir)-Path to the training set; in our case, it refers to the training images from ISIC 2019. Another option is to also include the training images from SIC 2019 along with the images from the EDEASD dataset, but in this latter case, it is only applied to the binary problem.
+
+    train_dir ="..." 
+    
+(test_dir)-Path to the validation set; in our case, it refers to the validation images from ISIC 2019.
+
+    test_dir ="..." 
+
+(train_push_dir)-In our case, it remains the same as train_dir when train_dir is Train ISIC 2019. However, when train_dir is BP Train ISIC 2019 + EDEASD, we can restrict it to only EDEASD. This is because EDEASD contains dermatological concept annotations, allowing us to determine the true concept represented by the prototype.
+
+    train_push_dir ="..." 
+
+(train_mask_dir)-Path to binary masks of size 224x224x1, one for each training image, with the same name as the corresponding image. For example, the image ISIC_0000013.JPG has the mask ISIC_0000013.PNG. These masks identify pixels relevant from a medical perspective, i.e., within the skin lesion boundary (labeled 0) or outside the boundary (labeled 1), similar to skin lesion segmentation. 
+When EDEASD images are used in training (BP Train ISIC 2019 + EDEASD), each mask identifies pixels associated with 1 or more medical concepts by at least 1 doctor or by a minimum of 3 doctors (labeled 0), depending on the chosen user's level of stringency and pixels that are not associated with any concept are marked with 0. 0 always identifies what is relevant or important in the image and 1 what is not relevant or important.
+
+    train_mask_dir="..." 
+    
+(test_mask_dir)-Masks for the validation set images. It is not mandatory but necessary to use when LP_MASKED=True.
+
+    test_mask_dir="..."
+
+(forbidden_protos_directory)- Folder containing prohibited prototypes, meaning models should not learn and consequently recall them. The information within this folder is only utilized when in the following coefficients configuration, where 'LF' takes a nonzero value. This configuration corresponds to the $L_{\text{P}}+L_{\text{F}}$ where we use the forgeting loss that can be utilized; however, in the case of the referenced thesis, we focused solely on the scenario involving only remembering loss ($L_{\text{P}}+L_{\text{F}}$.
+
+    coefs = {
+        'crs_ent': 1,
+        'clst': 0.8,
+        'sep': -0.08,
+        'l1': 1e-4,
+        'LM': 0,
+        'LF': 0.09,# For example
+        'LR': 0,
+    }
+
+    forbidden_protos_directory=r"C:\ACP_BM_Problem\FP" #
+  remembering_protos_directory=r"C:\ACP_BM_Problem\RP"
