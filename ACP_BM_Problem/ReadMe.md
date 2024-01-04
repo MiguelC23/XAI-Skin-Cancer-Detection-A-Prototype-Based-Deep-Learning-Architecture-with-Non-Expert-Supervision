@@ -315,7 +315,7 @@ Simply run the file **Visualize_Latent_Space.py**; there is no need to provide a
         size=(7,7) # Dimension of the maps that are the input of the prototype layer, i.e the output of convolution layers. Example [BATCH_SIZE,D,P,P]. So you should put size=(P,P). Only VGG16 has (14,14) the others is (7,7)
 
 ## 13- Conduct the evaluation of the following XAI metrics: G3-Truthfulness and G4-Informative Plausibility.
-Just run the following file XAI_MG3_MG4.py; no need to provide arguments in the terminal command line, but you should edit the following lines as necessary:
+Just run the following file **XAI_MG3_MG4.py**; no need to provide arguments in the terminal command line, but you should edit the following lines as necessary:
 
     path_to_one_model=r"..." # Path to the model.
     MASKS_IN_TEST_SETS=... #Set this to true if the model was trained with LP1C_MASKED=True.
