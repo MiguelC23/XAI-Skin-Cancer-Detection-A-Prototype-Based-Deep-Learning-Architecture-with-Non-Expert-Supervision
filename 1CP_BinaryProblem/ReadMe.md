@@ -144,7 +144,9 @@ Simply run the global_analysis_train_dataset.py file; there is no need to provid
 ## 7-View the k patches from the EDEASD (EASY Dermoscopy Expert Agreement Study dataset) set closest to each prototype. 
 Simply run the global_analysis_EDEASD.py file; there is no need to provide arguments in the terminal, just edit the following lines of code:
 
-    train_push_dir=r"..." #Folder with only the EDEASD images, inside this folder we have two subfolders, one for each class, MEL and NV.
+    def main(load_model_path: str, num_classes: int, k: int):
+        ...
+        train_push_dir=r"..." #Folder with only the EDEASD images, inside this folder we have two subfolders, one for each class, MEL and NV.
 
     if __name__ == '__main__':
         load_model_path=r"..."# Path to the model file .pth
