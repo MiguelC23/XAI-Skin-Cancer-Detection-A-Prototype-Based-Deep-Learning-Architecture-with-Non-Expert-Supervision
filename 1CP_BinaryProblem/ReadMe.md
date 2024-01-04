@@ -13,7 +13,9 @@ To train the model, simply run the main.py file. It is not necessary to provide 
 Regarding the settings.py file, carefully examine the file as it is commented, explaining each of the parameters of the model settings. However, I would like to emphasize here that it is important to pay attention to the paths for the folders where the data is located.
 
 Path to the training set; in our case, it refers to the training images from ISIC 2019. Another option is to also include the training images from SIC 2019 along with the images from the EDEASD dataset. In other words, the 1st option is Train ISIC 2019, and the 2nd option is Train ISIC 2019 + EDEASD. This second option was not applied in the referenced thesis, but rather in future work developed subsequently after the thesis was published.
+
     train_dir ="..." 
+    
 Path to the validation set; in our case, it refers to the validation images from ISIC 2019.
     test_dir ="..." 
 
