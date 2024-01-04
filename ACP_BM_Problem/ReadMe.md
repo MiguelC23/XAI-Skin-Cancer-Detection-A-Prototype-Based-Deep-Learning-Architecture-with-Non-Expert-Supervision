@@ -83,4 +83,4 @@ The prototypes present in these folders will be loaded by the code, and data wil
 ## 2-Output of the code after running main.py and thus having trained the model.
 After training, a folder named NC2(2 classes) or NC8(8 classes) will be created in the directory where the code is located. Within NC2 or NC8, you can find a folder named resnet18 (if that was the base CNN used). Inside the resnet18 folder, there is a folder with the name of the run. Within this folder, you can find the obtained prototypes and the checkpoints with the saved models, with a .pth extension.
 
-
+## 3- Obtain examples of prototypes for using either forgetting or remembering loss? Run the debug.py file.
