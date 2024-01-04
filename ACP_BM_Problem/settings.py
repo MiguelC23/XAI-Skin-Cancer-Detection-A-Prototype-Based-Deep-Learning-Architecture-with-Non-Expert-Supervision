@@ -87,5 +87,5 @@ push_epochs=[5,10,15,20]#5,10,15,20
 number_iterations=10 #10
 
 
-experiment_run="run1"
+experiment_run="run1" #"Name of this experimental run"
 
