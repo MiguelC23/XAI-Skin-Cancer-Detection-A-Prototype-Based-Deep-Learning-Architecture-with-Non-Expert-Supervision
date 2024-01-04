@@ -9,19 +9,12 @@ In this type of models, we have prototypes for all classes, not just prototypes 
 
 The labels in the binary problem are 0 (MEL) and 1 (NV), while in the problem with the 8 classes of skin lesions, the labels are 0 (AK), 1 (BCC), 2 (BKL), 3 (DF), 4 (MEL), 5 (NV), 6 (SCC), and 7 (VASC).
 
-Here is the meaning of each acronym for the classes:
-Melanoma (MEL)
-
-Melanocytic nevus (NV)
-
-Basal cell carcinoma (BCC)
-
-Actinic keratosis (AK)
-
-Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis also called lichenoid keratosis) (BKL)
-
-Dermatofibroma (DF)
-
-Vascular lesion (VASC)
-
+Here is the meaning of each acronym for the classes:  
+Melanoma (MEL)  
+Melanocytic nevus (NV)  
+Basal cell carcinoma (BCC)  
+Actinic keratosis (AK) 
+Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis also called lichenoid keratosis) (BKL)  
+Dermatofibroma (DF)  
+Vascular lesion (VASC)  
 Squamous cell carcinoma (SCC)
