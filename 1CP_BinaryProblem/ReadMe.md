@@ -154,17 +154,20 @@ Simply run the global_analysis_EDEASD.py file; there is no need to provide argum
 ## 8- Examine, for each prototype, which patches of a given concept are closest to each prototype, as well as, for the patches of a concept that are closest to PX, the average distance of these patches to that prototype.
 It only makes sense to be used when the MEL and NV images from EDEASD were used during training. This is because only for these images do we have information at the level of annotations made by dermatologists regarding dermatological concepts pixel by pixel for each image. And when the push directory during training was exclusively the images from EDEASD. For this case, run the file concept_evaluation_EDEASD.py.
 You don't need to provide arguments in the terminal command line; just edit the following lines before running the file:
-if __name__ == '__main__':
-    ...
-    ...
-    train_push_dir = r"C:\Users\migue\OneDrive\Ambiente de Trabalho\archive_ISIC\masks_224_sum_all_concept_agree3\images_for_this_masks\MEL_NV"
-    load_model_path=r"C:\1CP_BinaryProblem\NC2\resnet18\run1\20_0push0.7869.pth"
-    size=...# Dimension of the maps that are the input of the prototype layer, i.e the output of convolution layers. Example [BATCH_SIZE,D,P,P]. So you should put size=(P,P). Only VGG16 has (14,14) the others is (7,7)
 
-def concept_eval(model, dataloader, size=(7,7)):
-    ...
-    MIC3_masksfolder_path=r"..." #Path to the masks of EDEASD images of type MIC-3, meaning that for each image, there is a mask for each concept identified by dermatologists. In each mask, pixels representing the concept are identified with a minimum agreement of at least 3 physicians. In this case, the masks are not inverted, meaning that a pixel annotated with 1 represents something important or relevant, and 0 represents a pixel that has not been annotated and is not important or relevant.
-    ...
+    if __name__ == '__main__':
+        ...
+        ...
+        train_push_dir = r"C:\Users\migue\OneDrive\Ambiente de Trabalho\archive_ISIC\masks_224_sum_all_concept_agree3\images_for_this_masks\MEL_NV"
+        load_model_path=r"C:\1CP_BinaryProblem\NC2\resnet18\run1\20_0push0.7869.pth"
+        size=...# Dimension of the maps that are the input of the prototype layer, i.e the output of convolution layers. Example [BATCH_SIZE,D,P,P]. So you should put size=(P,P). Only VGG16 has (14,14) the others is (7,7)
+
+    def concept_eval(model, dataloader, size=(7,7)):
+        ...
+        MIC3_masksfolder_path=r"..." #Path to the masks of EDEASD images of type MIC-3, meaning that for each image, there is a mask for each concept identified by dermatologists. 
+        #In each mask, pixels representing the concept are identified with a minimum agreement of at least 3 physicians. In this case, the masks are not inverted, meaning that 
+        #a pixel annotated with 1 represents something important or relevant, and 0 represents a pixel that has not been annotated and is not important or relevant.
+        ...
 
 ## 9- Examine the concepts present in a given patch or prototype of an EDEASD image.
 Simply run the file true_concept_EDEASD_proto.py; there is no need to provide arguments in the terminal command line. However, you should edit the following lines of code as needed. 
