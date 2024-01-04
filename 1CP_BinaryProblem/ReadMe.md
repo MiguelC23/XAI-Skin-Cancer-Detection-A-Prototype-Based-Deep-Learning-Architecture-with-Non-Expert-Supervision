@@ -40,11 +40,17 @@ After training, a folder named NC2 will be created in the directory where the co
 
 ## 3- How to test the model on the PH2 or Derm7pt test sets?
 Simply run the file TestPH2_or_Derm7pt.py, and there is no need to provide arguments in the code line; just edit the following lines.
+     path to the model you want to test
+     
+    path_to_one_model=r"....pth"
+    
+We recommend setting it to True if the model has been trained with LP1C_MASKED=True, meaning the model discards patches from images associated with areas marked as 1 by the masks, i.e., areas that are not directly important in the internal structure of the model during the forward process. Therefore, during testing or validation, masks for these images should also be provided to the model. In other words, the model makes decisions solely based on patches associated with relevant areas marked as 0 by the masks. If the model was trained with LP1C_MASKED=False, set this line to false as well.
 
-path_to_one_model=r"....pth" path to the model you want to test
+    MASKS_IN_TEST_SETS=True 
+    
+If true test in PH2 else test in Derm7pt
 
-MASKS_IN_TEST_SETS=True # We recommend setting it to True if the model has been trained with LP1C_MASKED=True, meaning the model discards patches from images associated with areas marked as 1 by the masks, i.e., areas that are not directly important in the internal structure of the model during the forward process. Therefore, during testing or validation, masks for these images should also be provided to the model. In other words, the model makes decisions solely based on patches associated with relevant areas marked as 0 by the masks. If the model was trained with LP1C_MASKED=False, set this line to false as well.
-PH2=True# If true test in PH2 else test in Derm7pt
+    PH2=True
 
 if(PH2==True):
     test_dir=r"..." #Path to the 224x224x3 images of the PH2 test set.
