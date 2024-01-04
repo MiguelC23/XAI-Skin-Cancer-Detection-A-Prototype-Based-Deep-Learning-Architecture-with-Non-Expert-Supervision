@@ -218,10 +218,12 @@ Just run the following file XAI_MG3_MG4.py; no need to provide arguments in the 
     ...
     ...
     if(PH2==True):
-        test_mask_dir=r"..." #Path to the folder where two folders are located, MEL and NV, i.e., the binary masks where 1 represents the non-relevant and 0 represents the relevant. One binary mask per image. 
+        test_mask_dir=r"..." #Path to the folder where two folders are located, MEL and NV, i.e., the binary masks where 1 represents the non-relevant and 0 represents the relevant. 
+        #One binary mask per image. 
         #In other words, the masks are inverted. For the PH2 test dataset.
     elif(PH2==False):
-        test_mask_dir=r"..."  Path to the folder where two folders are located, MEL and NV, i.e., the binary masks where 1 represents the non-relevant and 0 represents the relevant. One binary mask per image. 
+        test_mask_dir=r"..."  Path to the folder where two folders are located, MEL and NV, i.e., the binary masks where 1 represents the non-relevant and 0 represents the relevant. 
+        #One binary mask per image. 
         #In other words, the masks are inverted. For the Derm7pt test dataset.
     ...
 
