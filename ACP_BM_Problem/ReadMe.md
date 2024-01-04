@@ -49,7 +49,7 @@ When EDEASD images are used in training (BP Train ISIC 2019 + EDEASD), each mask
 
     test_mask_dir="..."
 
-(forbidden_protos_directory)- Folder containing prohibited prototypes, meaning models should not learn and consequently recall them. The information within this folder is only utilized when in the following coefficients configuration, where 'LF' takes a nonzero value. This configuration corresponds to the $L_{\text{P}}+L_{\text{F}}$ where we use the forgeting loss that can be utilized; however, in the case of the referenced thesis, we focused solely on the scenario involving only remembering loss ($L_{\text{P}}+L_{\text{F}}$.
+(forbidden_protos_directory)- Folder containing prohibited prototypes, meaning models should not learn and consequently recall them. The information within this folder is only utilized in the following coefficients configuration, where 'LF' takes a nonzero value. This configuration corresponds to the $L_{\text{P}}+L_{\text{F}}$ where we use the forgeting loss that can be utilized
 
     coefs = {
         'crs_ent': 1,
@@ -59,7 +59,23 @@ When EDEASD images are used in training (BP Train ISIC 2019 + EDEASD), each mask
         'LM': 0,
         'LF': 0.09,# For example
         'LR': 0,
+    };
+        
+however, in the case of the referenced thesis, we focused solely on the scenario involving only remembering loss ($L_{\text{P}}+L_{\text{R}}$.
+
+    coefs = {
+        'crs_ent': 1,
+        'clst': 0.8,
+        'sep': -0.08,
+        'l1': 1e-4,
+        'LM': 0,
+        'LF': 0,
+        'LR': 0.02,
     }
 
-    forbidden_protos_directory=r"C:\ACP_BM_Problem\FP" #
-  remembering_protos_directory=r"C:\ACP_BM_Problem\RP"
+    forbidden_protos_directory=r"C:\ACP_BM_Problem\FP" 
+    remembering_protos_directory=r"C:\ACP_BM_Problem\RP"
+
+Within the folders of prohibited prototypes and those that must be remembered, you will find images of skin lesions with dimensions of 224x224x3. These images are organized into folders based on their class, such as class_idx_0 and class_idx_1 for binary classification problems, or class_idx_0, class_idx_1, class_idx_2, class_idx_3, class_idx_4, class_idx_5, class_idx_6, and class_idx_7 for the case of a problem with 8 classes. Within these subfolders, you'll find images in the following format, for example, ISIC_0010349_31.png, where ISIC_0010349 represents the identifying name of the image, and 31 represents the index of the patch that represents a prototype.
+
+The prototypes present in these folders will be loaded by the code, and data will be used as input information to the model to apply forgetting loss and remembering loss, meaning they are only utilized when coefs['LF'] or coefs['LR'] in settings.py are nonzero. It is important to note that the prototypes in these folders can be obtained by running the debug.py file. After the user has executed models with the $L_{\text{P}}$ and $L_{\text{P}}+L_{\text{M}}$ scenarios, running the debug.py file on those models allows the user to obtain examples of prototypes that are considered prohibited and examples of prototypes that are considered relevant. These relevant prototypes are considered good examples for each class and should be remembered. In the case of the referenced thesis, we focused solely on prototypes that should be remembered, as we concentrated on the $L_{\text{P}}+L_{\text{R}}$ scenario. For the binary problem, we had 25 examples of prototypes chosen by the user per class in the remembering_protos_directory folder, and 6 per class in the multiclass problem.
