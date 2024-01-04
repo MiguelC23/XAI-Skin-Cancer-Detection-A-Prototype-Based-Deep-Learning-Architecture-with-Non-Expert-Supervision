@@ -12,9 +12,10 @@ This code was designed solely for application to a binary classification problem
 To train the model, simply run the main.py file. It is not necessary to provide arguments in the code line, as the model settings are edited in the settings.py file. After that, just run main.py.
 Regarding the settings.py file, carefully examine the file as it is commented, explaining each of the parameters of the model settings. However, I would like to emphasize here that it is important to pay attention to the paths for the folders where the data is located.
 
-train_dir ="..." # Path to the training set; in our case, it refers to the training images from ISIC 2019. Another option is to also include the training images from SIC 2019 along with the images from the EDEASD dataset. In other words, the 1st option is Train ISIC 2019, and the 2nd option is Train ISIC 2019 + EDEASD. This second option was not applied in the referenced thesis, but rather in future work developed subsequently after the thesis was published.
-
-test_dir ="..." # Path to the validation set; in our case, it refers to the validation images from ISIC 2019.
+Path to the training set; in our case, it refers to the training images from ISIC 2019. Another option is to also include the training images from SIC 2019 along with the images from the EDEASD dataset. In other words, the 1st option is Train ISIC 2019, and the 2nd option is Train ISIC 2019 + EDEASD. This second option was not applied in the referenced thesis, but rather in future work developed subsequently after the thesis was published.
+    train_dir ="..." 
+Path to the validation set; in our case, it refers to the validation images from ISIC 2019.
+    test_dir ="..." 
 
 train_push_dir ="..." # In our case, it remains the same as train_dir when train_dir is Train ISIC 2019. However, when train_dir is Train ISIC 2019 + EDEASD, we can restrict it to only EDEASD. This is because EDEASD contains dermatological concept annotations, allowing us to determine the true concept represented by the prototype.
 
