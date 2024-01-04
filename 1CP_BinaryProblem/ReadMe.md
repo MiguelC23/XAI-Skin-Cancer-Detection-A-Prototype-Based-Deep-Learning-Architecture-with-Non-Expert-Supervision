@@ -135,17 +135,18 @@ Edit the following lines of file local_analysis_vis.py as well:
 
 ## 6-View the k patches from the training set closest to each prototype. 
 Simply run the global_analysis_train_dataset.py file; there is no need to provide arguments in the terminal, just edit the following lines of code:
-if __name__ == '__main__':
-    load_model_path=r"..."# Path to the model file .pth
-    k=... # Number of patches we want to see that are closest to each prototype. We may want to view the top 5, 10, or 20, for example.
-    ...
+
+    if __name__ == '__main__':
+        load_model_path=r"..."# Path to the model file .pth
+        k=... # Number of patches we want to see that are closest to each prototype. We may want to view the top 5, 10, or 20, for example.
+        ...
 
 ## 7-View the k patches from the EDEASD (EASY Dermoscopy Expert Agreement Study dataset) set closest to each prototype. 
 Simply run the global_analysis_EDEASD.py file; there is no need to provide arguments in the terminal, just edit the following lines of code:
-if __name__ == '__main__':
-    load_model_path=r"..."# Path to the model file .pth
-    k=... # Number of patches we want to see that are closest to each prototype. We may want to view the top 5, 10, or 20, for example.
-    ...
+    if __name__ == '__main__':
+        load_model_path=r"..."# Path to the model file .pth
+        k=... # Number of patches we want to see that are closest to each prototype. We may want to view the top 5, 10, or 20, for example.
+        ...
 
 ## 8- Examine, for each prototype, which patches of a given concept are closest to each prototype, as well as, for the patches of a concept that are closest to PX, the average distance of these patches to that prototype.
 It only makes sense to be used when the MEL and NV images from EDEASD were used during training. This is because only for these images do we have information at the level of annotations made by dermatologists regarding dermatological concepts pixel by pixel for each image. And when the push directory during training was exclusively the images from EDEASD. For this case, run the file concept_evaluation_EDEASD.py.
