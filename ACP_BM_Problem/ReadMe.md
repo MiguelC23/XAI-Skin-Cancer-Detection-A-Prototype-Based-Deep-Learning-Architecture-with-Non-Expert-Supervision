@@ -303,3 +303,13 @@ Simply run the file **true_concept_EDEASD_proto.py**; there is no need to provid
         ...
 
 The code outputs the concepts present in the patch and an associated percentage indicating how much of the patch the concept occupies. The larger the area it covers, the higher the percentage.
+
+## 12- Visualize the latent space representation of the model by creating a plot using t-SNE.
+Simply run the file **Visualize_Latent_Space.py**; there is no need to provide arguments in the command line—just execute the file and edit the following lines of code:
+
+    if __name__ == '__main__':
+        images=False # If true each point is an image else each point is a patch
+        filter_patches=True #  If True We only want relevant patchs marked with 0s in inverted masks. Only put True when images=False
+        only_max_pool_patches=True # Select the most activated patch between an image and each prototype when True, as utilizing all patches in t-SNE from the training dataset proves to be computationally expensive.
+        load_model_path=r"..." Path to the "//.pth" model
+        size=(7,7) # Dimension of the maps that are the input of the prototype layer, i.e the output of convolution layers. Example [BATCH_SIZE,D,P,P]. So you should put size=(P,P). Only VGG16 has (14,14) the others is (7,7)
