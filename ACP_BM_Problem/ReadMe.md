@@ -18,3 +18,8 @@ Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like kera
 Dermatofibroma (DF)  
 Vascular lesion (VASC)  
 Squamous cell carcinoma (SCC)
+
+## 1-How to train the model?
+
+To train the model, simply run the main.py file. It is not necessary to provide arguments in the code line, as the model settings are edited in the settings.py file. After that, just run main.py.
+Regarding the settings.py file, carefully examine the file as it is commented, explaining each of the parameters of the model settings. However, I would like to emphasize here that it is important to pay attention to the paths for the folders where the data is located.
