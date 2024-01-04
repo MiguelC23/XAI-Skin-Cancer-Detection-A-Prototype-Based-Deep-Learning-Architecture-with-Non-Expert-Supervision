@@ -139,8 +139,16 @@ If PH2=False and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WI
     
     ...
     if(PH2==True):
-        test_dir=r"C:\Users\migue\OneDrive\Ambiente de Trabalho\PH2_DERM7PT\PH2_test"
-        folder=r"C:\ACP_BM_PROBLEM\PH2_Results"
+        test_dir=r"..." #Path to the 224x224x3 images of the PH2 test set.
+        folder=r"...\ACP_BM_PROBLEM\PH2_Results" #Path to the folder where we will save a text file containing the results of testing the model on the PH2 test set.
     else:
-        test_dir=r"C:\Users\migue\OneDrive\Ambiente de Trabalho\PH2_DERM7PT\derm7pt_like_ISIC2019\train_val_test_224"
-        folder=r"C:\ACP_BM_PROBLEM\Derm7pt_Results"
+        test_dir=r"..." #Path to the 224x224x3 images of the Derm7pt test set.
+        folder=r"...\ACP_BM_PROBLEM\Derm7pt_Results" #Path to the folder where we will save a text file containing the results of testing the model on the Derm7pt test set.
+    ...
+    if(PH2==True):
+        test_mask_dir=r"..." Path to PH2 masks. O marks relevant pixels and 1 what is not relevant. They are only used when MASKS_IN_TEST_SETS=True.
+    elif(PH2==False):
+        test_mask_dir=r"..." Path to Derm7pt masks. O marks relevant pixels and 1 what is not relevant. They are only used when MASKS_IN_TEST_SETS=True.
+
+The image folder of the PH2 dataset has two subfolders, one for each class (MEL and NV), and the same applies to the folder containing the masks. In the case of the Derm7pt dataset, the image folder contains 6 subfolders, each corresponding to a class (BCC, BKL, DF, MEL, NV, VASC), and the same structure is present in the masks folder. It is worth noting that the images have dimensions of 224x224x3, while the masks have dimensions of 224x224x1. The masks serve to identify important/relevant pixels (inside the boundary of the skin lesion) in this medical context, represented by 0, and non-relevant/unimportant pixels (outside the boundary of the skin lesion) are represented by 1.
+    
