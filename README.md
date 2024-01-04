@@ -36,7 +36,7 @@ Noel Codella, Veronica Rotemberg, Philipp Tschandl, M. Emre Celebi, Stephen Dusz
 
 Tschandl, P., Rosendahl, C. & Kittler, H. The HAM10000 dataset, a large collection of multi-source dermatoscopic images of common pigmented skin lesions. Sci. Data 5, 180161 doi:10.1038/sdata.2018.161 (2018)
 
-**[$\text{PH}^2$](https://www.fc.up.pt/addi/ph2%20database.html)-Used as a Test Dataset**
+**[PH2](https://www.fc.up.pt/addi/ph2%20database.html)-Used as a Test Dataset**
 
 T. Mendonça, P. M. Ferreira, J. S. Marques, A. R. S. Marcal and J. Rozeira, "PH2 - A dermoscopic image database for research and benchmarking," 2013 35th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC), Osaka, Japan, 2013, pp. 5437-5440, doi: 10.1109/EMBC.2013.6610779.
 
