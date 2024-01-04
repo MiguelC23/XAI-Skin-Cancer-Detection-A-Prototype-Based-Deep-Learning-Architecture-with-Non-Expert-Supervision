@@ -49,6 +49,13 @@ Some training and validation image masks were obtained from the ISIC 2018 datase
 
 Please refer to sections 5.3 of the thesis document 'Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision' for further details.
 
+## How to cite?
+ Correia, M.J.N.: Explainable artificial intelligence for skin cancer detection: A prototype-based deep learning architecture with non-expert supervision (November 2023)
+ 
+ M. Correia, A. Bissoto, C. Santiago, and C. Barata, “XAI for Skin Cancer Detection with Prototypes and Non-Expert Supervision,” accepted at the Workshop on Interpretability of Machine Intelligence in Medical Image Computing at MICCAI 2023 [See Paper here!](https://drive.google.com/drive/folders/19aSw1LTZIpSthwR0KwzU7BVVj2W1rWYc?usp=sharing)
+ 
+ [See Workshop on Interpretability of Machine Intelligence in Medical Image Computing at MICCAI 2023 here!](https://imimic-workshop.com/)
+
 
 
 
