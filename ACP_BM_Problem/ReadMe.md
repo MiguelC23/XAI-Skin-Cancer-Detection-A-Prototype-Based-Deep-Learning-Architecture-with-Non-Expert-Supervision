@@ -11,10 +11,17 @@ The labels in the binary problem are 0 (MEL) and 1 (NV), while in the problem wi
 
 Here is the meaning of each acronym for the classes:
 Melanoma (MEL)
+
 Melanocytic nevus (NV)
+
 Basal cell carcinoma (BCC)
+
 Actinic keratosis (AK)
+
 Benign keratosis (solar lentigo / seborrheic keratosis / lichen planus-like keratosis also called lichenoid keratosis) (BKL)
+
 Dermatofibroma (DF)
+
 Vascular lesion (VASC)
+
 Squamous cell carcinoma (SCC)
