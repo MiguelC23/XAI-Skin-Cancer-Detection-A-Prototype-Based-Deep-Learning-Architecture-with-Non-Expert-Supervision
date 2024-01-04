@@ -282,3 +282,24 @@ You don't need to provide arguments in the terminal command line; just edit the 
         #In each mask, pixels representing the concept are identified with a minimum agreement of at least 3 physicians. In this case, the masks are not inverted, meaning that 
         #a pixel annotated with 1 represents something important or relevant, and 0 represents a pixel that has not been annotated and is not important or relevant.
         ...
+
+## 11- Examine the concepts present in a given patch or prototype of an EDEASD image.
+Simply run the file **true_concept_EDEASD_proto.py**; there is no need to provide arguments in the terminal command line. However, you should edit the following lines of code as needed. 
+
+    if __name__ == '__main__':
+        ...
+        PROTO_ISIC_ID_EDEASD=... # Example 'ISIC_0046495'
+        PATCH_IDX=25 # From 0 to 48 if the image is represented in the latent space by a 7x7 dimension map; otherwise, patches are numbered from 0 to 195 when the map has a dimension of 14x14. 
+        ...
+        map_size = ...# Example 7 or 14. 
+        ....
+    
+    def concepts_present(ID,a,b,size):
+        ...
+        MIC3_masksfolder_path=r"..." #Path to the masks of EDEASD images of type MIC-3, meaning that for each image, there is a mask for each concept identified by dermatologists. 
+        In each mask, pixels representing the concept are identified with a minimum agreement of at least 3 physicians. 
+        In this case, the masks are not inverted, meaning that a pixel annotated with 1 represents something important or relevant, 
+        and 0 represents a pixel that has not been annotated and is not important or relevant.
+        ...
+
+The code outputs the concepts present in the patch and an associated percentage indicating how much of the patch the concept occupies. The larger the area it covers, the higher the percentage.
