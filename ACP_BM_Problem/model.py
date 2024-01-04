@@ -45,7 +45,7 @@ class PPNet(nn.Module):
                  proto_layer_rf_info, topk_k=1, num_classes=3, init_weights=True, last_layer_connection_weight=None,
                  prototype_activation_function='log',
                  add_on_layers_type='bottleneck',
-                 LP1C_MASKED=False,Base_architecture=None,Fixed_prototypes_during_training_initialized_orthogonally=False):
+                 LP_MASKED=False,Base_architecture=None,Fixed_prototypes_during_training_initialized_orthogonally=False):
 
         super(PPNet, self).__init__()
         self.img_size = img_size
@@ -55,7 +55,7 @@ class PPNet(nn.Module):
         self.num_classes = num_classes
         self.epsilon = 1e-4
         self.last_layer_connection_weight = last_layer_connection_weight
-        self.LP1C_MASKED=LP1C_MASKED
+        self.LP_MASKED=LP_MASKED
         self.base_architecture=Base_architecture
         self.Fixed_prototypes_during_training_initialized_orthogonally=Fixed_prototypes_during_training_initialized_orthogonally
         
@@ -242,7 +242,7 @@ class PPNet(nn.Module):
         #print(x.shape)
         distances = self.prototype_distances(x)
         #print(distances.shape) #[batch_size,numP,7,7] or #[batch_size,numP,14,14]
-        if (self.LP1C_MASKED==True):
+        if (self.LP_MASKED==True):
             if(mascaras!=None):
                 mascaras_reduzidas=F.adaptive_avg_pool2d(mascaras, (distances.shape[2], distances.shape[3]))
                 ones_tensor = torch.ones(mascaras_reduzidas.shape[0], mascaras_reduzidas.shape[1], mascaras_reduzidas.shape[2], mascaras_reduzidas.shape[3]).cuda()
@@ -276,7 +276,7 @@ class PPNet(nn.Module):
         '''this method is needed for the pushing operation'''
         conv_output = self.conv_features(x)
         distances = self._l2_convolution(conv_output)
-        if (self.LP1C_MASKED==True):
+        if (self.LP_MASKED==True):
             if(mascaras!=None):
                 mascaras_reduzidas=F.adaptive_avg_pool2d(mascaras, (distances.shape[2], distances.shape[3]))
                 ones_tensor = torch.ones(mascaras_reduzidas.shape[0], mascaras_reduzidas.shape[1], mascaras_reduzidas.shape[2], mascaras_reduzidas.shape[3]).cuda()
@@ -325,7 +325,7 @@ class PPNet(nn.Module):
             '\tnum_classes: {},\n'
             '\tepsilon: {},\n'
             '\tbase_architecture: {},\n'
-            '\tLP1C_MASKED: {},\n'
+            '\tLP_MASKED: {},\n'
             '\tFixed_prototypes_during_training_initialized_orthogonally: {},\n'
             '\ttopk_k: {},\n'
             ')'
@@ -339,7 +339,7 @@ class PPNet(nn.Module):
                           self.num_classes,
                           self.epsilon,
                           self.base_architecture,
-                          self.LP1C_MASKED,
+                          self.LP_MASKED,
                           self.Fixed_prototypes_during_training_initialized_orthogonally,
                           self.topk_k)
 
@@ -376,7 +376,7 @@ class PPNet(nn.Module):
 def construct_PPNet(base_architecture, pretrained=True, img_size=224,
                     prototype_shape=(2000, 512, 1, 1), topk_k=1, num_classes=200,
                     prototype_activation_function='log', last_layer_weight=None,
-                    add_on_layers_type='bottleneck',LP1C_MASKED=False,Fixed_prototypes_during_training_initialized_orthogonally=False):
+                    add_on_layers_type='bottleneck',LP_MASKED=False,Fixed_prototypes_during_training_initialized_orthogonally=False):
     features = base_architecture_to_features[base_architecture](pretrained=pretrained)
 
     if(base_architecture.startswith('eb')):
@@ -410,5 +410,5 @@ def construct_PPNet(base_architecture, pretrained=True, img_size=224,
                  init_weights=True,
                  prototype_activation_function=prototype_activation_function,
                  last_layer_connection_weight=last_layer_weight,
-                 add_on_layers_type=add_on_layers_type,LP1C_MASKED=LP1C_MASKED,Base_architecture=base_architecture,Fixed_prototypes_during_training_initialized_orthogonally=Fixed_prototypes_during_training_initialized_orthogonally)
+                 add_on_layers_type=add_on_layers_type,LP_MASKED=LP_MASKED,Base_architecture=base_architecture,Fixed_prototypes_during_training_initialized_orthogonally=Fixed_prototypes_during_training_initialized_orthogonally)
 

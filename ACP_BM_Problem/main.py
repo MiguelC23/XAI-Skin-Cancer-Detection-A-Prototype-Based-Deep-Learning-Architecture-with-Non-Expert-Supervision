@@ -26,7 +26,7 @@ if __name__ == '__main__':
     from settings import folder_path_to_save_runs
     from settings import train_dir, test_dir, train_push_dir,train_batch_size, test_batch_size, train_push_batch_size
     from settings import train_mask_dir,online_augmentation
-    from settings import LP1C_MASKED,Fixed_prototypes_during_training_initialized_orthogonally
+    from settings import LP_MASKED,Fixed_prototypes_during_training_initialized_orthogonally
     from settings import load_model_path
     from settings import joint_optimizer_lrs, joint_lr_step_size
     from settings import warm_optimizer_lrs
@@ -143,7 +143,7 @@ if __name__ == '__main__':
                                     num_classes=num_classes,
                                     prototype_activation_function=prototype_activation_function,
                                     add_on_layers_type=add_on_layers_type,
-                                    last_layer_weight=last_layer_weight,LP1C_MASKED=LP1C_MASKED,
+                                    last_layer_weight=last_layer_weight,LP_MASKED=LP_MASKED,
                                     Fixed_prototypes_during_training_initialized_orthogonally=Fixed_prototypes_during_training_initialized_orthogonally)
     
     ppnet = ppnet.cuda()
@@ -223,7 +223,7 @@ if __name__ == '__main__':
     "PC":"Miguel",
     "number_iterations":number_iterations,
     "class_specific_penalization":class_specific_penalization,
-    "LP1C_MASKED":LP1C_MASKED,
+    "LP_MASKED":LP_MASKED,
     "number_of_prototypes_per_class":number_of_prototypes_per_class,
     "Fixed_prototypes_during_training_initialized_orthogonally":Fixed_prototypes_during_training_initialized_orthogonally,
     "Test_results_with_test_masks":Test_results_with_test_masks,
