@@ -50,7 +50,7 @@ If PH2=False and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WI
         test_dir=r"...Path to the folder containing the MEL and NV folders of the test images from the PH2 dataset..."
         folder=r"...\Test_Black-Box\ResultsPH2" #Path to the folder where a text file with the results will be saved.
     else:
-        test_dir=r"C:\Users\migue\OneDrive\Ambiente de Trabalho\PH2_DERM7PT\derm7pt_like_ISIC2019\train_val_test_224"
+        test_dir=r"...Path to the folder containing the class folders of the test images from the Derm7pt dataset..."
         folder=r"...\Test_Black-Box\Results_Derm7pt" Path to the folder where a text file with the results will be saved.
 
 
@@ -60,7 +60,7 @@ If PH2=False and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WI
                         #One binary mask per image. 
                         #In other words, the masks are inverted. For the PH2 test dataset.
         elif(PH2==False):
-                test_mask_dir=r"C:\Users\migue\OneDrive\Ambiente de Trabalho\PH2_DERM7PT\DERM7PT_FINE_MASKS_224" #Path to the folder where six folders are located,(BCC, BKL, DF, MEL, NV, VASC), 
+                test_mask_dir=r"..." #Path to the folder where six folders are located,(BCC, BKL, DF, MEL, NV, VASC), 
                 #i.e., the binary masks where 1 represents the non-relevant and 0 represents the relevant. #One binary mask per image. 
                 #In other words, the masks are inverted. For the Derm7pt test dataset.
     else:
