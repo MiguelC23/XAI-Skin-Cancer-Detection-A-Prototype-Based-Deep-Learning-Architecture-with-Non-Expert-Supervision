@@ -26,4 +26,4 @@ If PH2=False and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WI
     
 
 
-The image folder of the PH2 dataset has two subfolders, one for each class (MEL and NV), and the same applies to the folder containing the masks. In the case of the Derm7pt dataset, the image folder contains 6 subfolders, each corresponding to a class (BCC, BKL, DF, MEL, NV, VASC), and the same structure is present in the masks folder. It is worth noting that the images have dimensions of 224x224x3, while the masks have dimensions of 224x224x1. The masks serve to identify important/relevant pixels (inside the boundary of the skin lesion) in this medical context, represented by 0, and non-relevant/unimportant pixels (outside the boundary of the skin lesion) are represented by 1.
+The image folder of the PH2 dataset has two subfolders, one for each class (MEL and NV). In the case of the Derm7pt dataset, the image folder contains 6 subfolders, each corresponding to a class (BCC, BKL, DF, MEL, NV, VASC). It is worth noting that the images have dimensions of 224x224x3.
