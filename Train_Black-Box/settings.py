@@ -20,7 +20,7 @@ train_batch_size = 250
 test_batch_size = 250
 
 num_train_epochs = 100
-lr=0.001
+lr=0.001 #learning rate
 id=1
 
-experiment_run=base_architecture+'_id_'+str(id)
+experiment_run=base_architecture+'_id_'+str(id) # name of the this experience run
