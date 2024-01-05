@@ -14,8 +14,8 @@ If PH2=False and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WI
     #This flags are important to show only results relate to the classes present in the Dataset we are testing
     #Because PH2 only has 2 classes and Derm7pt 6 classes
     #But if we trained the model with 8 classes need to pay attention to this flags
-    FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_DERM7PT=True
-    FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_PH2=False
+    FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_DERM7PT=True  #Always false if the model has been trained on the binary problem.
+    FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_PH2=False  #Always false if the model has been trained on the binary problem.
 
     if(PH2==True):
         test_dir=r"...." #Path to the 224x224x3 images of the PH2 test set.
