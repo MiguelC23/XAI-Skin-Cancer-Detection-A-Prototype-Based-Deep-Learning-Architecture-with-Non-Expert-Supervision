@@ -318,7 +318,7 @@ Simply run the file **Visualize_Latent_Space.py**; there is no need to provide a
 Just run the following file **XAI_MG3_MG4.py**; no need to provide arguments in the terminal command line, but you should edit the following lines as necessary:
 
     path_to_one_model=r"..." # Path to the model.
-    MASKS_IN_TEST_SETS=... #Set this to true if the model was trained with LP1C_MASKED=True.
+    MASKS_IN_TEST_SETS=... #Set this to true since we need the masks to perform the evaluation of G3 and G4.
     PH2=True# If true test in PH2 else test in Derm7pt
     
 If PH2=True and the model was trained with 8 classes, set FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_DERM7PT=False and FLAG_MODEL_TRAINED_WITH_8_CLASSES_AND_TEST_PH2=True.
