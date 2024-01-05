@@ -1,3 +1,4 @@
+## Introduction
 Miguel Joaquim Nobre Correia.
 
 Master's in Electrical and Computer Engineering.
@@ -18,6 +19,27 @@ The code in this repository is an adaptation of the code in the following reposi
 | ProtoPNet                                          | https://github.com/cfchen-duke/ProtoPNet   | [See License](https://github.com/cfchen-duke/ProtoPNet/blob/81bf2b70cb60e4f36e25e8be386eb616b7459321/LICENSE)   |  
 | IAIA-BL loss                                       | https://github.com/alinajadebarnett/iaiabl | [See License](https://github.com/alinajadebarnett/iaiabl/blob/04efedb3f6bd0b4495e90b4d4bfcbeacfde0db57/LICENSE) |
 | Concept-level Debugging of Part-Prototype Networks | https://github.com/abonte/protopdebug      | [See License](https://github.com/abonte/protopdebug/blob/main/LICENSE)                                          |
+
+## Recommended hardware
+1 NVIDIA GeForce RTX 3090
+
+## Requirements
+albumentations==1.3.1
+matplotlib==3.4.3
+torch==1.10.0+cu113
+torchaudio==0.10.0+cu113
+torchvision==0.11.1+cu113
+wandb==0.13.10
+scikit-image==0.19.1
+scikit-learn==1.1.1
+scipy==1.7.3
+pandas==1.5.2
+opencv-contrib-python==4.5.4.60
+opencv-python==4.5.5.64
+opencv-python-headless==4.7.0.72
+[pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
+
+## Datasets
 
 Used datasets [See sections 4.1, 4.2 and 5.3 of the thesis Explainable Artificial Intelligence for Skin Cancer Detection: A Prototype-Based Deep Learning Architecture with Non-Expert Supervision](https://drive.google.com/file/d/1eKjxa3VhYLG_qV73ySK-5XtMqZHzTxLW/view?usp=sharing) 
 
