@@ -24,10 +24,10 @@ The code in this repository is an adaptation of the code in the following reposi
 1 NVIDIA GeForce RTX 3090
 
 ## Requirements
+- Python 3.9.7
 - albumentations==1.3.1
 - matplotlib==3.4.3
 - torch==1.10.0+cu113
-- torchaudio==0.10.0+cu113
 - torchvision==0.11.1+cu113
 - wandb==0.13.10
 - scikit-image==0.19.1
