@@ -24,20 +24,20 @@ The code in this repository is an adaptation of the code in the following reposi
 1 NVIDIA GeForce RTX 3090
 
 ## Requirements
-- Python 3.9.7
+- Python 3.10.8
 - albumentations==1.3.1
-- matplotlib==3.4.3
-- torch==1.10.0+cu113
-- torchvision==0.11.1+cu113
+- matplotlib==3.7.0
+- torch==1.13.1
+- torchvision==0.14.1
 - wandb==0.13.10
-- scikit-image==0.19.1
-- scikit-learn==1.1.1
-- scipy==1.7.3
-- pandas==1.5.2
-- opencv-contrib-python==4.5.4.60
-- opencv-python==4.5.5.64
-- opencv-python-headless==4.7.0.72
+- scikit-image==0.21.0
+- scikit-learn==1.2.1
+- scipy==1.10.1
+- pandas==1.5.3
+- opencv-contrib-python==4.7.0.72
+- opencv-python-headless==4.8.0.74
 - [pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
+- CUDA Version: 12.0
 
 ## Datasets
 
